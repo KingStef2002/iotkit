@@ -96,7 +96,11 @@ public:
     { 
         oled.setTextCursor( x * 6 , y * 8 ); 
     }
-
+ 
+    void printImage(const unsigned char *bitmap, int xOffset, int yOffset) {
+        oled.drawBitmap(xOffset, yOffset, bitmap, 128, 32, 1);
+        oled.display();
+    }
     
 private:
         I2C i2c;
